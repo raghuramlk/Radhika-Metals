@@ -1,0 +1,946 @@
+
+<!DOCTYPE HTML>
+<html >
+<head>
+    <link href="css/bootstrap.min.css" rel='stylesheet' type='text/css' />
+    <link href="css/style.css" rel='stylesheet' type='text/css' />
+
+    <script src="js/jquery-1.10.2.min.js"></script>
+    <script src="js/amcharts.js"></script>
+    <script src="js/serial.js"></script>
+    <script src="js/light.js"></script>
+    <script src="js/radar.js"></script>
+    <link href="css/barChart.css" rel='stylesheet' type='text/css' />
+    <link href="css/fabochart.css" rel='stylesheet' type='text/css' />
+    <script src="js/css3clock.js"></script>
+    <script src="js/skycons.js"></script>
+    <script src="js/jquery.easydropdown.js"></script>
+    <script src="js/dashboard.js"></script>
+    <script src="angular/angular.js"></script>
+    <script src="angular/ui-bootstrap-tpls-0.11.0.min.js"></script>
+    <script src="angular/app.js"></script>
+    <script src="tablejs/jquery.dataTables.min.js"></script>
+    <script src="tablejs/dataTables.bootstrap.min.js"></script>
+</head>
+<body ng-app="invoiceApp" >
+<div ng-controller="HeaderController">
+    <div ng-include="header.url"  ></div>
+</div>
+<div class="page-container">
+    <!--/content-inner-->
+    <div class="left-content">
+        <div class="inner-content">
+
+            <!--//outer-wp-->
+            <div class="outter-wp">
+                <!--/sub-heard-part-->
+
+                <!--/sub-heard-part-->
+                <!--/tabs-->
+                <div class="tab-main">
+                    <!--/tabs-inner-->
+                    <div class="tab-inner">
+                        <div id="tabs" class="tabs">
+                            <h3 class="inner-tittle">RBSSD & FN</h3>
+
+                            <div class="graph">
+                                <nav>
+                                    <ul>
+                                        <li><a href="#section-1" class="icon-shop"><i class="fa fa-bars"></i>
+                                            <span>Invoice</span></a></li>
+                                        <li><a href="#section-2" class="icon-cup"><i class="fa fa-chevron-circle-right"></i> <span>New</span></a>
+                                        </li>
+                                        <li><a href="#section-2" class="icon-cup"><i class="fa fa-pencil-square-o"></i> <span>Edit</span></a>
+                                        </li>
+                                       <!-- <li><a href="#section-3" class="icon-food"><i class="fa fa-cutlery"></i> <span></span></a>
+                                        </li>
+                                        <li><a href="#section-4" class="icon-lab"><i class="fa fa-flask"></i>
+                                            <span>Lab</span></a></li>
+                                        <li><a href="#section-5" class="icon-truck"><i class="fa fa-truck"></i> <span>Order</span></a>
+                                        </li>-->
+                                    </ul>
+                                </nav>
+                                <div class="content tab">
+                                    <section id="section-1">
+                                        <div class="outter-wp">
+                                           <!-- <h3 class="inner-tittle two">Responsive Table </h3>-->
+                                            <div class="graph">
+                                                <div class="tables">
+
+                                                   <!-- <table class="table table-bordered">
+                                                        <thead> <tr>
+                                                            <th>#</th>
+                                                            <th>DC No</th>
+                                                            <th>Date</th>
+                                                            <th>Custid</th>
+                                                            <th>Meterial</th>
+                                                            <th>Truck No</th>
+                                                            <th>Qunatity</th>
+                                                            <th>Approximate Value</th>
+                                                        </tr> </thead>
+                                                        <tbody> <tr>
+                                                            <th scope="row">1</th>
+                                                            <td>101</td>
+                                                            <td>25/3/2015</td>
+                                                            <td>c101</td>
+                                                            <td>Manganeese 28x4</td>
+                                                            <td>13258</td>
+                                                            <td>82,004</td>
+                                                            <td>82,004.005</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th scope="row">2</th>
+                                                            <td>101</td>
+                                                            <td>25/3/2015</td>
+                                                            <td>c101</td>
+                                                            <td>Manganeese 28x4</td>
+                                                            <td>13258</td>
+                                                            <td>82,004</td>
+                                                            <td>82,004.005</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th scope="row">3</th>
+                                                            <td>101</td>
+                                                            <td>25/3/2015</td>
+                                                            <td>c101</td>
+                                                            <td>Manganeese 28x4</td>
+                                                            <td>13258</td>
+                                                            <td>82,004</td>
+                                                            <td>82,004.005</td>
+                                                        </tr> </tbody> </table>-->
+                                                    <table class="table table-bordered" id="example">
+                                                        <thead> <tr>
+                                                            <th>#</th>
+                                                            <th>Invoice No</th>
+                                                            <th>Date</th>
+                                                            <th>Quantity</th>
+                                                            <th>UPR</th>
+                                                            <th>VAT Amt</th>
+                                                            <th>Total</th>
+                                                            <th>Operation</th>
+                                                        </tr> </thead>
+                                                        <tbody> <tr>
+                                                            <th scope="row">1</th>
+                                                            <td>101</td>
+                                                            <td>23/3/2016</td>
+                                                            <td>12300</td>
+                                                            <td>upr</td>
+                                                            <td>12882</td>
+                                                            <td>82,004</td>
+                                                            <td><a href="" class="button-delete" data-toggle = "modal" data-target = "#myModal"><img src="images/trash.png" height="32" width="32"/></a>
+                                                           <a href="" class="button-delete" data-toggle = "modal" data-target = "#myModal1"><img src="images/print.png" height="36" width="36"/></a> </td>
+
+                                                        </tr>
+
+
+                                                        <tr>
+                                                            <th scope="row">2</th>
+                                                            <td>102</td>
+                                                            <td>24/3/2016</td>
+                                                            <td>2400</td>
+                                                             <td>upr</td>
+                                                            <td>25666</td>
+                                                            <td>29000.005</td>
+
+                                                            <td><a href="" class="button-delete" data-toggle = "modal" data-target = "#myModal"><img src="images/trash.png" height="32" width="32"/></a>
+                                                                <a href="" class="button-delete" data-toggle = "modal" data-target = "#myModal1"><img src="images/print.png" height="36" width="36"/></a> </td>
+
+                                                        </tr>
+                                                        <tr>
+                                                            <th scope="row">3</th>
+                                                            <td>101</td>
+                                                            <td>25/3/2016</td>
+                                                            <td>5600</td>
+                                                            <td>upr</td>
+                                                            <td>658888</td>
+                                                            <td>42,555</td>
+                                                            <td><a href="" class="button-delete" data-toggle = "modal" data-target = "#myModal"><img src="images/trash.png" height="32" width="32"/></a>
+                                                                <a href="" class="button-delete" data-toggle = "modal" data-target = "#myModal1"><img src="images/print.png" height="36" width="36"/></a> </td>
+
+                                                        </tr>
+
+                                                        <tr>
+                                                            <th scope="row">3</th>
+                                                            <td>101</td>
+                                                            <td>25/3/2016</td>
+                                                            <td>5600</td>
+                                                            <td>upr</td>
+                                                            <td>658888</td>
+                                                            <td>42,555</td>
+                                                            <td><a href="" class="button-delete" data-toggle = "modal" data-target = "#myModal"><img src="images/trash.png" height="32" width="32"/></a>
+                                                                <a href="" class="button-delete" data-toggle = "modal" data-target = "#myModal1"><img src="images/print.png" height="36" width="36"/></a> </td>
+
+                                                        </tr>
+                                                        <tr>
+                                                            <th scope="row">3</th>
+                                                            <td>101</td>
+                                                            <td>25/3/2016</td>
+                                                            <td>5600</td>
+                                                            <td>upr</td>
+                                                            <td>658888</td>
+                                                            <td>42,555</td>
+                                                            <td><a href="" class="button-delete" data-toggle = "modal" data-target = "#myModal"><img src="images/trash.png" height="32" width="32"/></a>
+                                                                <a href="" class="button-delete" data-toggle = "modal" data-target = "#myModal1"><img src="images/print.png" height="36" width="36"/></a> </td>
+
+                                                        </tr>
+                                                        <tr>
+                                                            <th scope="row">3</th>
+                                                            <td>101</td>
+                                                            <td>25/3/2016</td>
+                                                            <td>5600</td>
+                                                            <td>upr</td>
+                                                            <td>658888</td>
+                                                            <td>42,555</td>
+                                                            <td><a href="" class="button-delete" data-toggle = "modal" data-target = "#myModal"><img src="images/trash.png" height="32" width="32"/></a>
+                                                                <a href="" class="button-delete" data-toggle = "modal" data-target = "#myModal1"><img src="images/print.png" height="36" width="36"/></a> </td>
+
+                                                        </tr>
+                                                        <tr>
+                                                            <th scope="row">3</th>
+                                                            <td>101</td>
+                                                            <td>25/3/2016</td>
+                                                            <td>5600</td>
+                                                            <td>upr</td>
+                                                            <td>658888</td>
+                                                            <td>42,555</td>
+                                                            <td><a href="" class="button-delete" data-toggle = "modal" data-target = "#myModal"><img src="images/trash.png" height="32" width="32"/></a>
+                                                                <a href="" class="button-delete" data-toggle = "modal" data-target = "#myModal1"><img src="images/print.png" height="36" width="36"/></a> </td>
+
+                                                        </tr>
+                                                        <tr>
+                                                            <th scope="row">3</th>
+                                                            <td>101</td>
+                                                            <td>25/3/2016</td>
+                                                            <td>5600</td>
+                                                            <td>upr</td>
+                                                            <td>658888</td>
+                                                            <td>42,555</td>
+                                                            <td><a href="" class="button-delete" data-toggle = "modal" data-target = "#myModal"><img src="images/trash.png" height="32" width="32"/></a>
+                                                                <a href="" class="button-delete" data-toggle = "modal" data-target = "#myModal1"><img src="images/print.png" height="36" width="36"/></a> </td>
+
+                                                        </tr>
+                                                        <tr>
+                                                            <th scope="row">3</th>
+                                                            <td>101</td>
+                                                            <td>25/3/2016</td>
+                                                            <td>5600</td>
+                                                            <td>upr</td>
+                                                            <td>658888</td>
+                                                            <td>42,555</td>
+                                                            <td><a href="" class="button-delete" data-toggle = "modal" data-target = "#myModal"><img src="images/trash.png" height="32" width="32"/></a>
+                                                                <a href="" class="button-delete" data-toggle = "modal" data-target = "#myModal1"><img src="images/print.png" height="36" width="36"/></a> </td>
+
+                                                        </tr>
+                                                        <tr>
+                                                            <th scope="row">3</th>
+                                                            <td>101</td>
+                                                            <td>25/3/2016</td>
+                                                            <td>5600</td>
+                                                            <td>upr</td>
+                                                            <td>658888</td>
+                                                            <td>42,555</td>
+                                                            <td><a href="" class="button-delete" data-toggle = "modal" data-target = "#myModal"><img src="images/trash.png" height="32" width="32"/></a>
+                                                                <a href="" class="button-delete" data-toggle = "modal" data-target = "#myModal1"><img src="images/print.png" height="36" width="36"/></a> </td>
+
+                                                        </tr>
+                                                        <tr>
+                                                            <th scope="row">3</th>
+                                                            <td>101</td>
+                                                            <td>25/3/2016</td>
+                                                            <td>5600</td>
+                                                            <td>upr</td>
+                                                            <td>658888</td>
+                                                            <td>42,555</td>
+                                                            <td><a href="" class="button-delete" data-toggle = "modal" data-target = "#myModal"><img src="images/trash.png" height="32" width="32"/></a>
+                                                                <a href="" class="button-delete" data-toggle = "modal" data-target = "#myModal1"><img src="images/print.png" height="36" width="36"/></a> </td>
+
+                                                        </tr>
+                                                        <tr>
+                                                            <th scope="row">3</th>
+                                                            <td>101</td>
+                                                            <td>25/3/2016</td>
+                                                            <td>5600</td>
+                                                            <td>upr</td>
+                                                            <td>658888</td>
+                                                            <td>42,555</td>
+                                                            <td><a href="" class="button-delete" data-toggle = "modal" data-target = "#myModal"><img src="images/trash.png" height="32" width="32"/></a>
+                                                                <a href="" class="button-delete" data-toggle = "modal" data-target = "#myModal1"><img src="images/print.png" height="36" width="36"/></a> </td>
+
+                                                        </tr>
+                                                        <tr>
+                                                            <th scope="row">3</th>
+                                                            <td>101</td>
+                                                            <td>25/3/2016</td>
+                                                            <td>5600</td>
+                                                            <td>upr</td>
+                                                            <td>658888</td>
+                                                            <td>42,555</td>
+                                                            <td><a href="" class="button-delete" data-toggle = "modal" data-target = "#myModal"><img src="images/trash.png" height="32" width="32"/></a>
+                                                                <a href="" class="button-delete" data-toggle = "modal" data-target = "#myModal1"><img src="images/print.png" height="36" width="36"/></a> </td>
+
+                                                        </tr>
+                                                        <tr>
+                                                            <th scope="row">3</th>
+                                                            <td>101</td>
+                                                            <td>25/3/2016</td>
+                                                            <td>5600</td>
+                                                            <td>upr</td>
+                                                            <td>658888</td>
+                                                            <td>42,555</td>
+                                                            <td><a href="" class="button-delete" data-toggle = "modal" data-target = "#myModal"><img src="images/trash.png" height="32" width="32"/></a>
+                                                                <a href="" class="button-delete" data-toggle = "modal" data-target = "#myModal1"><img src="images/print.png" height="36" width="36"/></a> </td>
+
+                                                        </tr>
+                                                        <tr>
+                                                            <th scope="row">3</th>
+                                                            <td>101</td>
+                                                            <td>25/3/2016</td>
+                                                            <td>5600</td>
+                                                            <td>upr</td>
+                                                            <td>658888</td>
+                                                            <td>42,555</td>
+                                                            <td><a href="" class="button-delete" data-toggle = "modal" data-target = "#myModal"><img src="images/trash.png" height="32" width="32"/></a>
+                                                                <a href="" class="button-delete" data-toggle = "modal" data-target = "#myModal1"><img src="images/print.png" height="36" width="36"/></a> </td>
+
+                                                        </tr>
+                                                        <tr>
+                                                            <th scope="row">3</th>
+                                                            <td>101</td>
+                                                            <td>25/3/2016</td>
+                                                            <td>5600</td>
+                                                            <td>upr</td>
+                                                            <td>658888</td>
+                                                            <td>42,555</td>
+                                                            <td><a href="" class="button-delete" data-toggle = "modal" data-target = "#myModal"><img src="images/trash.png" height="32" width="32"/></a>
+                                                                <a href="" class="button-delete" data-toggle = "modal" data-target = "#myModal1"><img src="images/print.png" height="36" width="36"/></a> </td>
+
+                                                        </tr>
+                                                        <tr>
+                                                            <th scope="row">3</th>
+                                                            <td>101</td>
+                                                            <td>25/3/2016</td>
+                                                            <td>5600</td>
+                                                            <td>upr</td>
+                                                            <td>658888</td>
+                                                            <td>42,555</td>
+                                                            <td><a href="" class="button-delete" data-toggle = "modal" data-target = "#myModal"><img src="images/trash.png" height="32" width="32"/></a>
+                                                                <a href="" class="button-delete" data-toggle = "modal" data-target = "#myModal1"><img src="images/print.png" height="36" width="36"/></a> </td>
+
+                                                        </tr>
+
+
+                                                        </tbody> </table>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </section>
+                                    <section id="section-2">
+
+                                      <!--  <h3 class="inner-title two">Responsive Table </h3>-->
+                                        <div class="forms-main">
+
+
+                                            <div class="graph-form">
+                                                <div class="validation-form">
+                                                    <!---->
+
+                                                    <form>
+                                                        <div class="vali-form">
+                                                            <div class="col-md-6 form-group1">
+                                                               <!-- <label class="control-label"></label>-->
+                                                                <input type="text" placeholder="Invoice No"
+                                                                       required="">
+                                                            </div>
+                                                            <div class="col-md-6 form-group1 form-last">
+                                                               <!-- <label class="control-label"></label>-->
+                                                                <input type="text" placeholder="A/c No"
+                                                                       required="">
+                                                            </div>
+                                                            <div class="clearfix"></div>
+                                                        </div>
+
+                                                        <div class="vali-form">
+
+                                                            <div class="col-md-6 form-group1 form-last">
+                                                                <!--  <label class="control-label">Mobile Number</label>-->
+                                                                <input type="text" id="date" placeholder="Date"
+                                                                       required="">
+                                                            </div>
+                                                            <div class="col-md-6 form-group1">
+                                                                <!--  <label class="control-label">Phone Number</label>-->
+                                                                <input type="text" placeholder="Analysing (MNS)"
+                                                                       required="">
+                                                            </div>
+
+                                                            <div class="clearfix"></div>
+                                                        </div>
+                                                        <div class="clearfix"></div>
+                                                        <div class="vali-form">
+                                                            <div class="col-md-6 form-group1">
+                                                                <!--  <label class="control-label">Phone Number</label>-->
+                                                                <input type="text" placeholder="Basic Price"
+                                                                       required="">
+                                                            </div>
+                                                            <div class="col-md-6 form-group1 form-last">
+                                                                <!--  <label class="control-label">Mobile Number</label>-->
+                                                                <input type="text" placeholder="For (MNS)"
+                                                                       required="">
+                                                            </div>
+                                                            <div class="clearfix"></div>
+                                                        </div>
+                                                        <div class="clearfix"></div>
+                                                       <!-- <div class="col-md-12 form-group2 group-mail">
+                                                            <label class="control-label">Language</label>
+                                                            <select>
+                                                                <option value="">English</option>
+                                                                <option value="">Japanese</option>
+                                                                <option value="">Russian</option>
+                                                                <option value="">Arabic</option>
+                                                                <option value="">Spanish</option>
+                                                            </select>
+                                                        </div>-->
+                                                  <!--      <div class="clearfix"></div>-->
+                                                        <!--<div class="col-md-12 form-group1 ">
+                                                            <label class="control-label">Your Comment</label>
+                                                            <textarea placeholder="Your Comment..." required="">Your Comment.....</textarea>
+                                                        </div>
+                                                        <div class="clearfix"></div>-->
+                                                        <div class="vali-form">
+                                                            <div class="col-md-6 form-group1">
+                                                                <!--  <label class="control-label">Phone Number</label>-->
+                                                                <input type="text" placeholder="Quantity"
+                                                                       required="">
+                                                            </div>
+                                                            <div class="col-md-6 form-group1 form-last">
+                                                                <!--  <label class="control-label">Mobile Number</label>-->
+                                                                <input type="text" placeholder="Unit Price"
+                                                                       required="">
+                                                            </div>
+                                                            <div class="clearfix"></div>
+                                                        </div>
+                                                            <div class="clearfix"></div>
+
+                                                     <!--   <div class="vali-form vali-form1">
+                                                            <div class="col-md-6 form-group1">
+                                                                <label class="control-label">Create a
+                                                                    password</label>
+                                                                <input type="password"
+                                                                       placeholder="Create a password" required="">
+                                                            </div>
+                                                            <div class="col-md-6 form-group1 form-last">
+                                                                <label class="control-label">Repeated
+                                                                    password</label>
+                                                                <input type="password"
+                                                                       placeholder="Repeated password" required="">
+                                                            </div>
+                                                            <div class="clearfix"></div>
+                                                        </div>-->
+
+                                                        <div class="vali-form">
+                                                            <div class="col-md-6 form-group1">
+                                                                <!--  <label class="control-label">Phone Number</label>-->
+                                                                <input type="text" placeholder="VAT%"
+                                                                       required="">
+                                                            </div>
+                                                            <div class="col-md-6 form-group1 form-last">
+                                                                <!--  <label class="control-label">Mobile Number</label>-->
+                                                                <input type="text" placeholder="VAT Amount"
+                                                                       required="">
+                                                            </div>
+                                                            <div class="clearfix"></div>
+                                                        </div>
+                                                        <div class="clearfix"></div>
+
+                                                      <!--  <div class="col-md-12 form-group1 group-mail">
+                                                            <label class="control-label ">Date</label>
+                                                            <input type="date"
+                                                                   class="form-control1 ng-invalid ng-invalid-required"
+                                                                   ng-model="model.date" required="">
+                                                        </div>-->
+                                                      <!--  <div class="clearfix"></div>
+                                                        <div class="col-md-12 form-group">
+                                                            <div class="checkbox1">
+                                                                <label class="check">
+                                                                    <input type="checkbox" ng-model="model.winner"
+                                                                           required=""
+                                                                           class="ng-invalid ng-invalid-required">
+                                                                    Are you a winner?
+                                                                </label>
+                                                            </div>
+                                                        </div>-->
+                                                        <div class="vali-form">
+                                                            <div class="col-md-12 form-group1">
+                                                                <!--  <label class="control-label">Phone Number</label>-->
+                                                                <input type="text" placeholder="Total value"
+                                                                       required="">
+                                                            </div>
+
+                                                            <div class="clearfix"></div>
+                                                        </div>
+                                                        <div class="clearfix"></div>
+                                                       <!-- <div class="col-md-12 form-group2 group-mail">
+                                                            <label class="control-label">Select</label>
+                                                            <select>
+                                                                <option value="">Contrary</option>
+                                                                <option value="">Contrary1</option>
+                                                                <option value="">Contrary2</option>
+                                                                <option value="">Contrary3</option>
+                                                                <option value="">Contrary4</option>
+                                                            </select>
+                                                        </div>-->
+                                                        <div class="col-md-12 form-group1 group-mail">
+                                                            <!--   <label class="control-label">Url</label>-->
+                                                            <input type="text" placeholder="Total Amount"
+                                                                   required="">
+                                                        </div>
+                                                        <div class="clearfix"></div>
+
+                                                        <div class="col-md-12 form-group button-2">
+                                                            <button type="submit" class="btn btn-primary">Submit
+                                                                <button type="reset" class="btn btn-default">Reset
+                                                                </button>
+                                                        </div>
+                                                        <div class="clearfix"></div>
+                                                    </form>
+
+                                                    <!---->
+                                                </div>
+
+                                            </div>
+                                        </div>            </button>
+
+                                    </section>
+                                    <section id="section-3">
+                                        <div class="forms-main">
+
+
+                                            <div class="graph-form">
+                                                <div class="validation-form">
+                                                    <!---->
+
+                                                    <form>
+                                                        <div class="vali-form">
+                                                            <div class="col-md-6 form-group2 ">
+
+                                                                <select>
+                                                                    <option value="" readonly="readonly">Invoice No</option>
+                                                                    <option value="">#1</option>
+                                                                    <option value="">#2</option>
+                                                                    <option value="">#3</option>
+                                                                    <option value="">#4</option>
+                                                                </select>
+                                                            </div>
+                                                            <div class="col-md-6 form-group1 form-last">
+                                                                <!-- <label class="control-label"></label>-->
+                                                                <input type="text" placeholder="A/c No"
+                                                                       required="">
+                                                            </div>
+                                                            <div class="clearfix"></div>
+                                                        </div>
+
+                                                        <div class="vali-form">
+
+                                                            <div class="col-md-6 form-group1 form-last">
+                                                                <!--  <label class="control-label">Mobile Number</label>-->
+                                                                <input type="text" id="date1" placeholder="Date"
+                                                                       required="">
+                                                            </div>
+                                                            <div class="col-md-6 form-group1">
+                                                                <!--  <label class="control-label">Phone Number</label>-->
+                                                                <input type="text" placeholder="Analysing (MNS)"
+                                                                       required="">
+                                                            </div>
+
+                                                            <div class="clearfix"></div>
+                                                        </div>
+                                                        <div class="clearfix"></div>
+                                                        <div class="vali-form">
+                                                            <div class="col-md-6 form-group1">
+                                                                <!--  <label class="control-label">Phone Number</label>-->
+                                                                <input type="text" placeholder="Basic Price"
+                                                                       required="">
+                                                            </div>
+                                                            <div class="col-md-6 form-group1 form-last">
+                                                                <!--  <label class="control-label">Mobile Number</label>-->
+                                                                <input type="text" placeholder="For (MNS)"
+                                                                       required="">
+                                                            </div>
+                                                            <div class="clearfix"></div>
+                                                        </div>
+                                                        <div class="clearfix"></div>
+                                                        <!-- <div class="col-md-12 form-group2 group-mail">
+                                                             <label class="control-label">Language</label>
+                                                             <select>
+                                                                 <option value="">English</option>
+                                                                 <option value="">Japanese</option>
+                                                                 <option value="">Russian</option>
+                                                                 <option value="">Arabic</option>
+                                                                 <option value="">Spanish</option>
+                                                             </select>
+                                                         </div>-->
+                                                        <!--      <div class="clearfix"></div>-->
+                                                        <!--<div class="col-md-12 form-group1 ">
+                                                            <label class="control-label">Your Comment</label>
+                                                            <textarea placeholder="Your Comment..." required="">Your Comment.....</textarea>
+                                                        </div>
+                                                        <div class="clearfix"></div>-->
+                                                        <div class="vali-form">
+                                                            <div class="col-md-6 form-group1">
+                                                                <!--  <label class="control-label">Phone Number</label>-->
+                                                                <input type="text" placeholder="Quantity"
+                                                                       required="">
+                                                            </div>
+                                                            <div class="col-md-6 form-group1 form-last">
+                                                                <!--  <label class="control-label">Mobile Number</label>-->
+                                                                <input type="text" placeholder="Unit Price"
+                                                                       required="">
+                                                            </div>
+                                                            <div class="clearfix"></div>
+                                                        </div>
+                                                        <div class="clearfix"></div>
+
+                                                        <!--   <div class="vali-form vali-form1">
+                                                               <div class="col-md-6 form-group1">
+                                                                   <label class="control-label">Create a
+                                                                       password</label>
+                                                                   <input type="password"
+                                                                          placeholder="Create a password" required="">
+                                                               </div>
+                                                               <div class="col-md-6 form-group1 form-last">
+                                                                   <label class="control-label">Repeated
+                                                                       password</label>
+                                                                   <input type="password"
+                                                                          placeholder="Repeated password" required="">
+                                                               </div>
+                                                               <div class="clearfix"></div>
+                                                           </div>-->
+
+                                                        <div class="vali-form">
+                                                            <div class="col-md-6 form-group1">
+                                                                <!--  <label class="control-label">Phone Number</label>-->
+                                                                <input type="text" placeholder="VAT%"
+                                                                       required="">
+                                                            </div>
+                                                            <div class="col-md-6 form-group1 form-last">
+                                                                <!--  <label class="control-label">Mobile Number</label>-->
+                                                                <input type="text" placeholder="VAT Amount"
+                                                                       required="">
+                                                            </div>
+                                                            <div class="clearfix"></div>
+                                                        </div>
+                                                        <div class="clearfix"></div>
+
+                                                        <!--  <div class="col-md-12 form-group1 group-mail">
+                                                              <label class="control-label ">Date</label>
+                                                              <input type="date"
+                                                                     class="form-control1 ng-invalid ng-invalid-required"
+                                                                     ng-model="model.date" required="">
+                                                          </div>-->
+                                                        <!--  <div class="clearfix"></div>
+                                                          <div class="col-md-12 form-group">
+                                                              <div class="checkbox1">
+                                                                  <label class="check">
+                                                                      <input type="checkbox" ng-model="model.winner"
+                                                                             required=""
+                                                                             class="ng-invalid ng-invalid-required">
+                                                                      Are you a winner?
+                                                                  </label>
+                                                              </div>
+                                                          </div>-->
+                                                        <div class="vali-form">
+                                                            <div class="col-md-12 form-group1">
+                                                                <!--  <label class="control-label">Phone Number</label>-->
+                                                                <input type="text" placeholder="Total value"
+                                                                       required="">
+                                                            </div>
+
+                                                            <div class="clearfix"></div>
+                                                        </div>
+                                                        <div class="clearfix"></div>
+                                                        <!-- <div class="col-md-12 form-group2 group-mail">
+                                                             <label class="control-label">Select</label>
+                                                             <select>
+                                                                 <option value="">Contrary</option>
+                                                                 <option value="">Contrary1</option>
+                                                                 <option value="">Contrary2</option>
+                                                                 <option value="">Contrary3</option>
+                                                                 <option value="">Contrary4</option>
+                                                             </select>
+                                                         </div>-->
+                                                        <div class="col-md-12 form-group1 group-mail">
+                                                            <!--   <label class="control-label">Url</label>-->
+                                                            <input type="text" placeholder="Total Amount"
+                                                                   required="">
+                                                        </div>
+                                                        <div class="clearfix"></div>
+
+                                                        <div class="col-md-12 form-group button-2">
+                                                            <button type="submit" class="btn btn-primary">Update
+                                                                <button type="reset" class="btn btn-default">Reset
+                                                                </button>
+                                                        </div>
+                                                        <div class="clearfix"></div>
+                                                    </form>
+
+                                                    <!---->
+                                                </div>
+
+                                            </div>
+                                        </div>
+
+                                    </section>
+                                  <!--  <section id="section-4">
+                                        <div class="mediabox">
+                                            <i class="fa fa-trophy"></i>
+
+                                            <h3>Tomato Cucumber Curd</h3>
+
+                                            <p>Chickweed okra pea winter purslane coriander yarrow sweet pepper radish
+                                                garlic brussels sprout groundnut summer purslane earthnut pea tomato
+                                                spring onion azuki bean gourd. </p>
+                                        </div>
+                                        <div class="mediabox">
+                                            <i class="fa fa-coffee"></i>
+
+                                            <h3>Mushroom Green</h3>
+
+                                            <p>Salsify taro catsear garlic gram celery bitterleaf wattle seed collard
+                                                greens nori. Grape wattle seed kombu beetroot horseradish carrot squash
+                                                brussels sprout chard.</p>
+                                        </div>
+                                        <div class="mediabox">
+                                            <i class="fa fa-leaf"></i>
+
+                                            <h3>Swiss Celery Chard</h3>
+
+                                            <p>Chickweed okra pea winter purslane coriander yarrow sweet pepper radish
+                                                garlic brussels sprout groundnut summer purslane earthnut pea tomato
+                                                spring onion azuki bean gourd. </p>
+                                        </div>
+                                    </section>
+                                    <section id="section-5">
+                                        <div class="mediabox">
+                                            <i class="fa fa-leaf"></i>
+
+                                            <h3>Radish Tomato</h3>
+
+                                            <p>Chickweed okra pea winter purslane coriander yarrow sweet pepper radish
+                                                garlic brussels sprout groundnut summer purslane earthnut pea tomato
+                                                spring onion azuki bean gourd. </p>
+                                        </div>
+                                        <div class="mediabox">
+                                            <i class="fa fa-trophy"></i>
+
+                                            <h3>Fennel Wasabi</h3>
+
+                                            <p>Chickweed okra pea winter purslane coriander yarrow sweet pepper radish
+                                                garlic brussels sprout groundnut summer purslane earthnut pea tomato
+                                                spring onion azuki bean gourd. </p>
+                                        </div>
+                                        <div class="mediabox">
+                                            <i class="fa fa-coffee"></i>
+
+                                            <h3>Red Tofu Wrap</h3>
+
+                                            <p>Chickweed okra pea winter purslane coriander yarrow sweet pepper radish
+                                                garlic brussels sprout groundnut summer purslane earthnut pea tomato
+                                                spring onion azuki bean gourd. </p>
+                                        </div>
+                                    </section>-->
+                                </div><!-- /content -->
+                            </div>
+                            <!-- /tabs -->
+
+                        </div>
+                        <script src="js/cbpFWTabs.js"></script>
+                        <script>
+                            new CBPFWTabs(document.getElementById('tabs'));
+                        </script>
+
+                        <div class="clearfix"></div>
+                    </div>
+                </div>
+                <!--//tabs-inner-->
+            </div>
+            <!--//tabs-->
+        </div>
+        <!--//outer-wp-->
+        <!--footer section start-->
+        <footer>
+            <!--<p>&copy 2016  All Rights Reserved | Design by <a href="" target="_blank"></a>
+            </p>-->
+        </footer>
+        <!--footer section end-->
+    </div>
+
+    <!--//content-inner-->
+    <!--/sidebar-menu-->
+    <div class="sidebar-menu">
+        <header class="logo">
+            <a href="#" class="sidebar-icon"> <span class="fa fa-bars"></span> </a> <a href="index.html"> <span id="logo"> <h4>Radhika Metals </br>& Minerals</h4></span>
+            <!--<img id="logo" src="" alt="Logo"/>-->
+        </a>
+        </header>
+
+        <!--/down-->
+        <div class="down">
+            <a href="index.html"><img src="images/logo.png"></a>
+         <!--   <a href="index.html"><span class=" name-caret">Invoice Management System</span></a>-->
+            <h5>Invoice Management System</h5>
+            <!-- <p>System Administrator in Company</p>
+            <ul>
+            <li><a class="tooltips" href="index.html"><span>Profile</span><i class="lnr lnr-user"></i></a></li>
+                <li><a class="tooltips" href="index.html"><span>Settings</span><i class="lnr lnr-cog"></i></a></li>
+                <li><a class="tooltips" href="index.html"><span>Log out</span><i class="lnr lnr-power-switch"></i></a></li>
+                </ul>-->
+        </div>
+        <!--//down-->
+        <div class="menu">
+            <ul id="menu" >
+                <li><a href="index.html"><i class="fa fa-tachometer"></i> <span >Dashboard</span></a></li>
+                <li><a href="customer.jsp"><i class="lnr lnr-chart-bars"></i> <span>Customer Profile</span> </a>
+
+                </li>
+                <li id="menu-academico" ><a href="deliverychalan.jsp"><i class="fa fa-table"></i> <span> Delivery Challan</span> <!--<span class="fa fa-angle-right" style="float: right"></span>--></a>
+                    <!--  <ul id="menu-academico-sub" >
+                       <li id="menu-academico-avaliacoes" ><a href="tabs.html"> Tabs &amp; Panels</a></li>
+                       <li id="menu-academico-boletim" ><a href="widget.html">Widgets</a></li>
+                       <li id="menu-academico-avaliacoes" ><a href="calender.html">Calendar</a></li>
+
+                     </ul>-->
+                </li>
+                <li id="menu-academico" ><a href="#"><i class="fa fa-file-text-o"></i> <span>RM & M</span> <span class="fa fa-angle-right" style="float: right"></span></a>
+                    <ul id="menu-academico-sub" >
+                        <li id="menu-academico-avaliacoes" ><a href="">DC Invoice</a></li>
+                        <li id="menu-academico-boletim" ><a href="">Transport Invoice</a></li>
+                        <!--<li id="menu-academico-boletim" ><a href="table.html">Tables</a></li>
+                        <li id="menu-academico-boletim" ><a href="buttons.html">Buttons</a></li>-->
+                    </ul>
+                </li>
+
+                <li id="menu-academico" ><a href="rbssd.html"><i class="lnr lnr-layers"></i> <span class="active">RBSSD & FN</span> <!--<span class="fa fa-angle-right" style="float: right"></span>--></a>
+                </li>
+
+
+                <li><a href="#"><i class="fa fa-inbox"></i> <span >Material List</span><span class="fa fa-angle-right" style="float: right"></span></a>
+                    <ul>
+                        <li><a href="meterial.jsp"><i class="fa fa-pencil-square-o"></i>Master Product</a></li>
+                        <!--    <li><a href="compose.html"><i class="fa fa-pencil-square-o"></i> Compose Mail</a></li>
+                            <li><a href="editor.html"><span class="lnr lnr-highlight"></span> Editors Page</a></li>
+-->
+                    </ul>
+                </li>
+                <li id="menu-academico" ><a href="#"><i class="lnr lnr-book"></i> <span>Reports</span> <span class="fa fa-angle-right" style="float: right"></span></a>
+                    <ul id="menu-academico-sub" >
+                        <li id="menu-academico-avaliacoes" ><a href="">Tunnage Reports</a></li>
+                        <li id="menu-academico-boletim" ><a href="">Partywise Reports</a></li>
+                        <li id="menu-academico-boletim" ><a href="">Gradewise Reports</a></li>
+                        <!--<li id="menu-academico-boletim" ><a href="sign.html">Sign up</a></li>
+                        <li id="menu-academico-boletim" ><a href="profile.html">Profile</a></li>-->
+                    </ul>
+                </li>
+                <li><a href="settings.html"><i class="fa fa-cog fa-fw"></i> <span>Settings</span></a></li>
+
+
+                <!-- <ul id="menu-academico-sub" >
+                    <li id="menu-academico-avaliacoes" ><a href="grids.html">Grids</a></li>
+                    <li id="menu-academico-boletim" ><a href="media.html">Media Objects</a></li>
+
+                  </ul>-->
+                <!-- </li>
+                <li><a href="chart.html"><i class="lnr lnr-chart-bars"></i> <span>Charts</span> <span class="fa fa-angle-right" style="float: right"></span></a>
+                  <ul>
+                    <li><a href="map.html"><i class="lnr lnr-map"></i> Maps</a></li>
+                    <li><a href="graph.html"><i class="lnr lnr-apartment"></i> Graph Visualization</a></li>
+                </ul>
+                </li>-->
+                <!--<li id="menu-comunicacao" ><a href="#"><i class="fa fa-smile-o"></i> <span>More</span><span class="fa fa-angle-double-right" style="float: right"></span></a>
+                  <ul id="menu-comunicacao-sub" >
+                    <li id="menu-mensagens" style="width:120px" ><a href="project.html">Projects <i class="fa fa-angle-right" style="float: right; margin-right: -8px; margin-top: 2px;"></i></a>
+                      <ul id="menu-mensagens-sub" >
+                        <li id="menu-mensagens-enviadas" style="width:130px" ><a href="ribbon.html">Ribbons</a></li>
+                        <li id="menu-mensagens-recebidas"  style="width:130px"><a href="blank.html">Blank</a></li>
+                      </ul>
+                    </li>
+                    <li id="menu-arquivos" ><a href="500.html">500</a></li>
+                  </ul>
+                </li>-->
+            </ul>
+        </div>
+    </div>
+    <div class="clearfix"></div>
+</div>
+<script>
+    var toggle = true;
+
+    $(".sidebar-icon").click(function () {
+        if (toggle) {
+            $(".page-container").addClass("sidebar-collapsed").removeClass("sidebar-collapsed-back");
+            $("#menu span").css({"position": "absolute"});
+        }
+        else {
+            $(".page-container").removeClass("sidebar-collapsed").addClass("sidebar-collapsed-back");
+            setTimeout(function () {
+                $("#menu span").css({"position": "relative"});
+            }, 400);
+        }
+
+        toggle = !toggle;
+    });
+</script>
+<!--js -->
+<script src="js/jquery.nicescroll.js"></script>
+<script src="js/scripts.js"></script>
+<!-- Bootstrap Core JavaScript -->
+<script src="js/bootstrap.min.js"></script>
+<script src="js/bootstrap-datepicker.js"></script>
+<script type="text/javascript">
+    // When the document is ready
+    $(document).ready(function () {
+
+        $('#date').datepicker({
+            format: "dd/mm/yyyy"
+        });
+        $('#date1').datepicker({
+            format: "dd/mm/yyyy"
+        });
+        $('#example').DataTable();
+    });
+</script>
+<div class = "modal fade" id = "myModal" tabindex = "-1" role = "dialog"
+     aria-labelledby = "myModalLabel" aria-hidden = "true">
+
+    <div class = "modal-dialog">
+        <div class = "modal-content">
+
+            <div class = "modal-header">
+                <button type = "button" class = "close" data-dismiss = "modal" aria-hidden = "true">
+                    &times;
+                </button>
+
+                <h4 class = "modal-title" id = "myModalLabel">
+                    Alert
+                </h4>
+            </div>
+
+            <div class = "modal-body">
+                Are you sure want to delete this?
+            </div>
+
+            <div class = "modal-footer">
+                <button type = "button" class = "btn btn-default" data-dismiss = "modal">
+                    Cancel
+                </button>
+
+                <button type = "button" class = "btn btn-primary">
+                    Delete
+                </button>
+            </div>
+
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+
+</div><!-- /.modal -->
+
+</body>
+</html>

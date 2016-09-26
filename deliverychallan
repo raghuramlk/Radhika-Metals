@@ -1,0 +1,759 @@
+
+<!DOCTYPE HTML>
+<html >
+<head>
+    <link href="css/bootstrap.min.css" rel='stylesheet' type='text/css' />
+    <link href="css/style.css" rel='stylesheet' type='text/css' />
+    <script src="js/jquery-1.10.2.min.js"></script>
+    <script src="js/amcharts.js"></script>
+    <script src="js/serial.js"></script>
+    <script src="js/light.js"></script>
+    <script src="js/radar.js"></script>
+    <link href="css/barChart.css" rel='stylesheet' type='text/css' />
+    <link href="css/fabochart.css" rel='stylesheet' type='text/css' />
+    <script src="js/css3clock.js"></script>
+    <script src="js/skycons.js"></script>
+    <script src="js/jquery.easydropdown.js"></script>
+    <script src="js/dashboard.js"></script>
+    <script src="angular/angular.js"></script>
+    <script src="angular/ui-bootstrap-tpls-0.11.0.min.js"></script>
+    <script src="angular/app.js"></script>
+    <script src="tablejs/jquery.dataTables.min.js"></script>
+    <script src="tablejs/dataTables.bootstrap.min.js"></script>
+</head>
+<body ng-app="invoiceApp" >
+<div ng-controller="HeaderController">
+    <div ng-include="header.url"  ></div>
+</div>
+<div class="page-container">
+    <!--/content-inner-->
+    <div class="left-content">
+        <div class="inner-content">
+
+            <!--//outer-wp-->
+            <div class="outter-wp">
+                <!--/sub-heard-part-->
+
+                <!--/sub-heard-part-->
+                <!--/tabs-->
+                <div class="tab-main">
+                    <!--/tabs-inner-->
+                    <div class="tab-inner">
+                        <div id="tabs" class="tabs">
+                            <h3 class="inner-tittle">Delivery Challan</h3>
+
+                            <div class="graph">
+                                <nav>
+                                    <ul>
+                                        <li><a href="#section-1" class="icon-shop"><i class="fa fa-tasks"></i>
+                                            <span>DC List</span></a></li>
+                                        <li><a href="#section-2" class="icon-cup"><i class="fa fa-chevron-circle-right"></i> <span>New</span></a>
+                                        </li>
+                                        <li><a href="#section-2" class="icon-cup"><i class="fa fa-pencil-square-o"></i> <span>Edit</span></a>
+                                        </li>
+                                        <!-- <li><a href="#section-3" class="icon-food"><i class="fa fa-cutlery"></i> <span></span></a>
+                                         </li>
+                                         <li><a href="#section-4" class="icon-lab"><i class="fa fa-flask"></i>
+                                             <span>Lab</span></a></li>
+                                         <li><a href="#section-5" class="icon-truck"><i class="fa fa-truck"></i> <span>Order</span></a>
+                                         </li>-->
+                                    </ul>
+                                </nav>
+                                <div class="content tab">
+                                    <section id="section-1">
+                                        <div class="outter-wp">
+                                            <!-- <h3 class="inner-tittle two">Responsive Table </h3>-->
+                                            <div class="graph">
+                                                <div class="tables">
+
+                                                    <!-- <table class="table table-bordered">
+                                                         <thead> <tr>
+                                                             <th>#</th>
+                                                             <th>DC No</th>
+                                                             <th>Date</th>
+                                                             <th>Custid</th>
+                                                             <th>Meterial</th>
+                                                             <th>Truck No</th>
+                                                             <th>Qunatity</th>
+                                                             <th>Approximate Value</th>
+                                                         </tr> </thead>
+                                                         <tbody> <tr>
+                                                             <th scope="row">1</th>
+                                                             <td>101</td>
+                                                             <td>25/3/2015</td>
+                                                             <td>c101</td>
+                                                             <td>Manganeese 28x4</td>
+                                                             <td>13258</td>
+                                                             <td>82,004</td>
+                                                             <td>82,004.005</td>
+                                                         </tr>
+                                                         <tr>
+                                                             <th scope="row">2</th>
+                                                             <td>101</td>
+                                                             <td>25/3/2015</td>
+                                                             <td>c101</td>
+                                                             <td>Manganeese 28x4</td>
+                                                             <td>13258</td>
+                                                             <td>82,004</td>
+                                                             <td>82,004.005</td>
+                                                         </tr>
+                                                         <tr>
+                                                             <th scope="row">3</th>
+                                                             <td>101</td>
+                                                             <td>25/3/2015</td>
+                                                             <td>c101</td>
+                                                             <td>Manganeese 28x4</td>
+                                                             <td>13258</td>
+                                                             <td>82,004</td>
+                                                             <td>82,004.005</td>
+                                                         </tr> </tbody> </table>-->
+                                                    <table class="table table-bordered" id="example">
+                                                        <thead> <tr>
+                                                            <th>#</th>
+                                                            <th>DC No</th>
+                                                            <th>Date</th>
+                                                            <th>Custid</th>
+                                                            <th>Material</th>
+                                                            <th>Truck No</th>
+                                                            <th>Qunatity</th>
+                                                            <th>Operation</th>
+
+                                                        </tr> </thead>
+                                                        <tbody> <tr>
+                                                                                                                     <th scope="row">1</th>
+                                                            <td>101</td>
+                                                            <td>25/3/2015</td>
+                                                            <td>c101</td>
+                                                            <td>Manganeese 28x4</td>
+                                                            <td>13258</td>
+                                                            <td>82,004</td>
+
+                                                            <td><a href="" class="button-delete" data-toggle = "modal" data-target = "#myModal"><img src="images/trash.png" height="32" width="32"/></a>
+                                                                <a href="" class="button-delete" data-toggle = "modal" data-target = "#myModal1"><img src="images/print.png" height="36" width="36"/></a>
+
+                                                            </td>
+
+                                                        </tr>
+
+
+                                                        <tr>
+                                                            <th scope="row">2</th>
+                                                            <td>102</td>
+                                                            <td>25/3/2015</td>
+                                                            <td>c101</td>
+                                                            <td>Manganeese 28x4</td>
+                                                            <td>13258</td>
+                                                            <td>82,004</td>
+
+                                                            <td><a href="" class="button-delete" data-toggle = "modal" data-target = "#myModal"><img src="images/trash.png" height="32" width="32"/></a>
+                                                                <a href="" class="button-delete" data-toggle = "modal" data-target = "#myModal1"><img src="images/print.png" height="36" width="36"/></a>
+
+                                                            </td>
+
+                                                        </tr>
+                                                        <tr>
+                                                            <th scope="row">2</th>
+                                                            <td>103</td>
+                                                            <td>25/3/2015</td>
+                                                            <td>c101</td>
+                                                            <td>Manganeese 28x4</td>
+                                                            <td>13258</td>
+                                                            <td>82,004</td>
+
+                                                            <td><a href="" class="button-delete" data-toggle = "modal" data-target = "#myModal"><img src="images/trash.png" height="32" width="32"/></a>
+                                                                <a href="" class="button-delete" data-toggle = "modal" data-target = "#myModal1"><img src="images/print.png" height="36" width="36"/></a>
+
+                                                            </td>
+
+                                                        </tr>
+
+
+
+                                                        <tr>
+                                                            <th scope="row">2</th>
+                                                            <td>104</td>
+                                                            <td>25/3/2015</td>
+                                                            <td>c101</td>
+                                                            <td>Manganeese 28x4</td>
+                                                            <td>13258</td>
+                                                            <td>82,004</td>
+
+                                                            <td><a href="" class="button-delete" data-toggle = "modal" data-target = "#myModal"><img src="images/trash.png" height="32" width="32"/></a>
+                                                                <a href="" class="button-delete" data-toggle = "modal" data-target = "#myModal1"><img src="images/print.png" height="36" width="36"/></a>
+
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th scope="row">2</th>
+                                                            <td>105</td>
+                                                            <td>25/3/2015</td>
+                                                            <td>c101</td>
+                                                            <td>Manganeese 28x4</td>
+                                                            <td>13258</td>
+                                                            <td>82,004</td>
+
+                                                            <td><a href="" class="button-delete" data-toggle = "modal" data-target = "#myModal"><img src="images/trash.png" height="32" width="32"/></a>
+                                                                <a href="" class="button-delete" data-toggle = "modal" data-target = "#myModal1"><img src="images/print.png" height="36" width="36"/></a>
+
+                                                            </td>
+
+                                                        </tr>
+                                                        <tr>
+                                                            <th scope="row">2</th>
+                                                            <td>106</td>
+                                                            <td>25/3/2015</td>
+                                                            <td>c101</td>
+                                                            <td>Manganeese 28x4</td>
+                                                            <td>13258</td>
+                                                            <td>82,004</td>
+
+                                                            <td><a href="" class="button-delete" data-toggle = "modal" data-target = "#myModal"><img src="images/trash.png" height="32" width="32"/></a>
+                                                                <a href="" class="button-delete" data-toggle = "modal" data-target = "#myModal1"><img src="images/print.png" height="36" width="36"/></a>
+
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th scope="row">2</th>
+                                                            <td>107</td>
+                                                            <td>25/3/2015</td>
+                                                            <td>c101</td>
+                                                            <td>Manganeese 28x4</td>
+                                                            <td>13258</td>
+                                                            <td>82,004</td>
+
+                                                            <td><a href="" class="button-delete" data-toggle = "modal" data-target = "#myModal"><img src="images/trash.png" height="32" width="32"/></a>
+                                                                <a href="" class="button-delete" data-toggle = "modal" data-target = "#myModal1"><img src="images/print.png" height="36" width="36"/></a>
+
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th scope="row">2</th>
+
+                                                            <td>108</td>
+                                                            <td>25/3/2015</td>
+                                                            <td>c101</td>
+                                                            <td>Manganeese 28x4</td>
+                                                            <td>13258</td>
+                                                            <td>82,004</td>
+
+                                                            <td><a href="" class="button-delete" data-toggle = "modal" data-target = "#myModal"><img src="images/trash.png" height="32" width="32"/></a>
+                                                                <a href="" class="button-delete" data-toggle = "modal" data-target = "#myModal1"><img src="images/print.png" height="36" width="36"/></a>
+
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th scope="row">2</th>
+                                                            <td>109</td>
+                                                            <td>25/3/2015</td>
+                                                            <td>c101</td>
+                                                            <td>Manganeese 28x4</td>
+                                                            <td>13258</td>
+                                                            <td>82,004</td>
+
+                                                            <td><a href="" class="button-delete" data-toggle = "modal" data-target = "#myModal"><img src="images/trash.png" height="32" width="32"/></a>
+                                                                <a href="" class="button-delete" data-toggle = "modal" data-target = "#myModal1"><img src="images/print.png" height="36" width="36"/></a>
+
+                                                            </td>
+
+                                                        </tr>
+                                                        <tr>
+                                                            <th scope="row">2</th>
+                                                            <td>110</td>
+                                                            <td>25/3/2015</td>
+                                                            <td>c101</td>
+                                                            <td>Manganeese 28x4</td>
+                                                            <td>13258</td>
+                                                            <td>82,004</td>
+
+                                                            <td><a href="" class="button-delete" data-toggle = "modal" data-target = "#myModal"><img src="images/trash.png" height="32" width="32"/></a>
+                                                                <a href="" class="button-delete" data-toggle = "modal" data-target = "#myModal1"><img src="images/print.png" height="36" width="36"/></a>
+
+                                                            </td>
+
+                                                        </tr>
+                                                        <tr>
+                                                            <th scope="row">2</th>
+                                                            <td>111</td>
+                                                            <td>25/3/2015</td>
+                                                            <td>c101</td>
+                                                            <td>Manganeese 28x4</td>
+                                                            <td>13258</td>
+                                                            <td>82,004</td>
+
+                                                            <td><a href="" class="button-delete" data-toggle = "modal" data-target = "#myModal"><img src="images/trash.png" height="32" width="32"/></a>
+                                                                <a href="" class="button-delete" data-toggle = "modal" data-target = "#myModal1"><img src="images/print.png" height="36" width="36"/></a>
+
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th scope="row">2</th>
+                                                            <td>112</td>
+                                                            <td>25/3/2015</td>
+                                                            <td>c101</td>
+                                                            <td>Manganeese 28x4</td>
+                                                            <td>13258</td>
+                                                            <td>82,004</td>
+
+                                                            <td><a href="" class="button-delete" data-toggle = "modal" data-target = "#myModal"><img src="images/trash.png" height="32" width="32"/></a>
+                                                                <a href="" class="button-delete" data-toggle = "modal" data-target = "#myModal1"><img src="images/print.png" height="36" width="36"/></a>
+
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th scope="row">2</th>
+                                                            <td>113</td>
+                                                            <td>25/3/2015</td>
+                                                            <td>c101</td>
+                                                            <td>Manganeese 28x4</td>
+                                                            <td>13258</td>
+                                                            <td>82,004</td>
+
+                                                            <td><a href="" class="button-delete" data-toggle = "modal" data-target = "#myModal"><img src="images/trash.png" height="32" width="32"/></a>
+                                                                <a href="" class="button-delete" data-toggle = "modal" data-target = "#myModal1"><img src="images/print.png" height="36" width="36"/></a>
+
+                                                            </td>
+
+                                                        </tr>
+                                                        <tr>
+                                                            <th scope="row">2</th>
+                                                            <td>113</td>
+                                                            <td>25/3/2015</td>
+                                                            <td>c101</td>
+                                                            <td>Manganeese 28x4</td>
+                                                            <td>13258</td>
+                                                            <td>82,004</td>
+
+                                                            <td><a href="" class="button-delete" data-toggle = "modal" data-target = "#myModal"><img src="images/trash.png" height="32" width="32"/></a>
+                                                                <a href="" class="button-delete" data-toggle = "modal" data-target = "#myModal1"><img src="images/print.png" height="36" width="36"/></a>
+
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th scope="row">2</th>
+                                                            <td>115</td>
+                                                            <td>25/3/2015</td>
+                                                            <td>c101</td>
+                                                            <td>Manganeese 28x4</td>
+                                                            <td>13258</td>
+                                                            <td>82,004</td>
+
+                                                            <td><a href="" class="button-delete" data-toggle = "modal" data-target = "#myModal"><img src="images/trash.png" height="32" width="32"/></a>
+                                                                <a href="" class="button-delete" data-toggle = "modal" data-target = "#myModal1"><img src="images/print.png" height="36" width="36"/></a>
+
+                                                            </td>
+
+                                                        </tr>
+                                                        <tr>
+                                                            <th scope="row">2</th>
+                                                            <td>116</td>
+                                                            <td>25/3/2015</td>
+                                                            <td>c101</td>
+                                                            <td>Manganeese 28x4</td>
+                                                            <td>13258</td>
+                                                            <td>82,004</td>
+
+                                                            <td><a href="" class="button-delete" data-toggle = "modal" data-target = "#myModal"><img src="images/trash.png" height="32" width="32"/></a>
+                                                                <a href="" class="button-delete" data-toggle = "modal" data-target = "#myModal1"><img src="images/print.png" height="36" width="36"/></a>
+
+                                                            </td>
+                                                        </tr>
+
+
+
+
+
+                                                        </tbody> </table>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </section>
+                                    <section id="section-2">
+
+                                        <!--  <h3 class="inner-tittle two">Responsive Table </h3>-->
+                                        <div class="forms-main">
+
+
+                                            <div class="graph-form">
+                                                <div class="validation-form">
+                                                    <!---->
+
+                                                    <form>
+                                                        <div class="vali-form">
+                                                            <div class="col-md-6 form-group1">
+                                                                <!-- <label class="control-label"></label>-->
+                                                                <input type="text" placeholder="Customer Id"
+                                                                       required="">
+                                                            </div>
+                                                            <div class="col-md-6 form-group1 form-last">
+                                                                <!-- <label class="control-label"></label>-->
+                                                                <input type="text" placeholder="Customer Name"
+                                                                       required="">
+                                                            </div>
+                                                            <div class="clearfix"></div>
+                                                        </div>
+
+                                                        <div class="col-md-12 form-group1 ">
+
+                                                            <textarea placeholder="Address" required="">Address</textarea>
+                                                        </div>
+                                                        <div class="clearfix"></div>
+                                                        <div class="col-md-12 form-group1 group-mail">
+                                                            <!--   <label class="control-label">Url</label>-->
+                                                            <input type="text" placeholder="City"
+                                                                   required="">
+                                                        </div>
+                                                        <div class="clearfix"></div>
+                                                        <!-- <div class="col-md-12 form-group2 group-mail">
+                                                             <label class="control-label">Language</label>
+                                                             <select>
+                                                                 <option value="">English</option>
+                                                                 <option value="">Japanese</option>
+                                                                 <option value="">Russian</option>
+                                                                 <option value="">Arabic</option>
+                                                                 <option value="">Spanish</option>
+                                                             </select>
+                                                         </div>-->
+                                                        <!--      <div class="clearfix"></div>-->
+                                                        <!--<div class="col-md-12 form-group1 ">
+                                                            <label class="control-label">Your Comment</label>
+                                                            <textarea placeholder="Your Comment..." required="">Your Comment.....</textarea>
+                                                        </div>
+                                                        <div class="clearfix"></div>-->
+                                                        <div class="vali-form">
+                                                            <div class="col-md-6 form-group1">
+                                                                <!--  <label class="control-label">Phone Number</label>-->
+                                                                <input type="text" placeholder="State"
+                                                                       required="">
+                                                            </div>
+                                                            <div class="col-md-6 form-group1 form-last">
+                                                                <!--  <label class="control-label">Mobile Number</label>-->
+                                                                <input type="text" placeholder="Destination"
+                                                                       required="">
+                                                            </div>
+                                                            <div class="clearfix"></div>
+                                                        </div>
+                                                        <!--   <div class="vali-form vali-form1">
+                                                               <div class="col-md-6 form-group1">
+                                                                   <label class="control-label">Create a
+                                                                       password</label>
+                                                                   <input type="password"
+                                                                          placeholder="Create a password" required="">
+                                                               </div>
+                                                               <div class="col-md-6 form-group1 form-last">
+                                                                   <label class="control-label">Repeated
+                                                                       password</label>
+                                                                   <input type="password"
+                                                                          placeholder="Repeated password" required="">
+                                                               </div>
+                                                               <div class="clearfix"></div>
+                                                           </div>-->
+                                                        <div class="col-md-12 form-group1 group-mail">
+                                                            <!-- <label class="control-label">Number</label>-->
+                                                            <input type="text" placeholder="VAT (%)" required="">
+
+
+                                                        </div>
+                                                        <div class="vali-form">
+                                                            <div class="col-md-6 form-group1">
+                                                                <!--  <label class="control-label">Phone Number</label>-->
+                                                                <input type="text" placeholder="Welfare (%)"
+                                                                       required="">
+                                                            </div>
+                                                            <div class="col-md-6 form-group1 form-last">
+                                                                <!--  <label class="control-label">Mobile Number</label>-->
+                                                                <input type="text" placeholder="CST (%)"
+                                                                       required="">
+                                                            </div>
+                                                            <div class="clearfix"></div>
+                                                        </div>
+                                                        <div class="clearfix"></div>
+
+
+                                                        <div class="clearfix"></div>
+
+
+                                                        <div class="col-md-12 form-group button-2">
+                                                            <button type="submit" class="btn btn-primary">Submit
+                                                            </button>
+                                                            <button type="reset" class="btn btn-default">Reset
+                                                            </button>
+                                                        </div>
+                                                        <div class="clearfix"></div>
+                                                    </form>
+
+                                                    <!---->
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </section>
+                                    <section id="section-3">
+                                        <div class="forms-main">
+
+
+                                            <div class="graph-form">
+                                                <div class="validation-form">
+                                                    <!---->
+
+                                                    <form>
+                                                        <!--  <div class="vali-form">
+                                                              <div class="col-md-6 form-group1">
+
+                                                                  <input type="text" placeholder="Customer Id"
+                                                                         required="">
+                                                              </div>-->
+                                                        <div class="vali-form">
+                                                            <div class="col-md-6 form-group2 ">
+
+                                                                <select>
+                                                                    <option value="" readonly="readonly">Customer Id</option>
+                                                                    <option value="">id2</option>
+                                                                    <option value="">id3</option>
+                                                                    <option value="">id4</option>
+                                                                    <option value="">id5</option>
+                                                                </select>
+                                                            </div>
+                                                            <div class="col-md-6 form-group1 form-last">
+                                                                <!-- <label class="control-label"></label>-->
+                                                                <input type="text" placeholder="Customer Name"
+                                                                       required="">
+                                                            </div>
+                                                        </div>
+                                                        <div class="clearfix"></div>
+                                                </div>
+
+                                                <div class="col-md-12 form-group1 ">
+
+                                                    <textarea placeholder="Address" required="">Address</textarea>
+                                                </div>
+                                                <div class="clearfix"></div>
+                                                <div class="col-md-12 form-group1 group-mail">
+                                                    <!--   <label class="control-label">Url</label>-->
+                                                    <input type="text" placeholder="City"
+                                                           required="">
+                                                </div>
+                                                <div class="clearfix"></div>
+
+                                                <div class="vali-form">
+                                                    <div class="col-md-6 form-group1">
+                                                        <!--  <label class="control-label">Phone Number</label>-->
+                                                        <input type="text" placeholder="State"
+                                                               required="">
+                                                    </div>
+                                                    <div class="col-md-6 form-group1 form-last">
+                                                        <!--  <label class="control-label">Mobile Number</label>-->
+                                                        <input type="text" placeholder="Destination"
+                                                               required="">
+                                                    </div>
+                                                    <div class="clearfix"></div>
+                                                </div>
+
+
+                                                <div class="col-md-12 form-group1 group-mail">
+                                                    <!-- <label class="control-label">Number</label>-->
+                                                    <input type="text" placeholder="VAT (%)" required="">
+
+
+                                                </div>
+                                                <div class="vali-form">
+                                                    <div class="col-md-6 form-group1">
+                                                        <!--  <label class="control-label">Phone Number</label>-->
+                                                        <input type="text" placeholder="Welfare (%)"
+                                                               required="">
+                                                    </div>
+                                                    <div class="col-md-6 form-group1 form-last">
+                                                        <!--  <label class="control-label">Mobile Number</label>-->
+                                                        <input type="text" placeholder="CST (%)"
+                                                               required="">
+                                                    </div>
+                                                    <div class="clearfix"></div>
+                                                </div>
+                                                <div class="clearfix"></div>
+
+
+                                                <div class="clearfix"></div>
+
+
+                                                <div class="col-md-12 form-group button-2">
+                                                    <button type="submit" class="btn btn-primary">Update
+                                                    </button>
+                                                    <button type="reset" class="btn btn-default">Reset
+                                                    </button>
+                                                </div>
+                                                <div class="clearfix"></div>
+                                                </form>
+
+                                                <!---->  </div>
+                                        </div>
+
+                                </div>
+
+                                </section>
+
+                            </div><!-- /content -->
+                        </div>
+                        <!-- /tabs -->
+
+                    </div>
+                    <script src="js/cbpFWTabs.js"></script>
+                    <script>
+                        new CBPFWTabs(document.getElementById('tabs'));
+                    </script>
+
+                    <div class="clearfix"></div>
+                </div>
+            </div>
+            <!--//tabs-inner-->
+        </div>
+        <!--//tabs-->
+    </div>
+    <!--//outer-wp-->
+
+</div>
+
+<!--//content-inner-->
+<!--/sidebar-menu-->
+<div class="sidebar-menu">
+    <header class="logo">
+        <a href="#" class="sidebar-icon"> <span class="fa fa-bars"></span> </a> <a href="index.html"> <span id="logo"> <h4>Radhika Metals </br>& Minerals</h4></span>
+        <!--<img id="logo" src="" alt="Logo"/>-->
+    </a>
+    </header>
+
+    <!--/down-->
+    <div class="down">
+        <a href="index.html"><img src="images/logo.png"></a>
+        <!--   <a href="index.html"><span class=" name-caret">Invoice Management System</span></a>-->
+        <h5>Invoice Management System</h5>
+
+    </div>
+    <!--//down-->
+    <div class="menu">
+        <ul id="menu" >
+            <li><a href="index.html"><i class="fa fa-tachometer"></i> <span >Dashboard</span></a></li>
+            <li><a href="customer.html"><i class="lnr lnr-chart-bars"></i> <span >Customer Profile</span> </a>
+
+            </li>
+            <li id="menu-academico" ><a href="deliverychallan.html"><i class="fa fa-table"></i> <span class="active"> Delivery Challan</span> <!--<span class="fa fa-angle-right" style="float: right"></span>--></a>
+                <!--  <ul id="menu-academico-sub" >
+                   <li id="menu-academico-avaliacoes" ><a href="tabs.html"> Tabs &amp; Panels</a></li>
+                   <li id="menu-academico-boletim" ><a href="widget.html">Widgets</a></li>
+                   <li id="menu-academico-avaliacoes" ><a href="calender.html">Calendar</a></li>
+
+                 </ul>-->
+            </li>
+            <li id="menu-academico" ><a href="#"><i class="fa fa-file-text-o"></i> <span>RM & M</span> <span class="fa fa-angle-right" style="float: right"></span></a>
+                <ul id="menu-academico-sub" >
+                    <li id="menu-academico-avaliacoes" ><a href="">DC Invoice</a></li>
+                    <li id="menu-academico-boletim" ><a href="">Transport Invoice</a></li>
+                    <!--<li id="menu-academico-boletim" ><a href="table.html">Tables</a></li>
+                    <li id="menu-academico-boletim" ><a href="buttons.html">Buttons</a></li>-->
+                </ul>
+            </li>
+
+            <li id="menu-academico" ><a href="rbssd.html"><i class="lnr lnr-layers"></i> <span>RBSSD & FN</span> <!--<span class="fa fa-angle-right" style="float: right"></span>--></a>
+            </li>
+
+
+            <li><a href="#"><i class="fa fa-inbox"></i> <span >Material List</span><span class="fa fa-angle-right" style="float: right"></span></a>
+                <ul>
+                    <li><a href="meterial.html"><i class="fa fa-pencil-square-o"></i>Master Product</a></li>
+                    <!--    <li><a href="compose.html"><i class="fa fa-pencil-square-o"></i> Compose Mail</a></li>
+                        <li><a href="editor.html"><span class="lnr lnr-highlight"></span> Editors Page</a></li>
+-->
+                </ul>
+            </li>
+            <li id="menu-academico" ><a href="#"><i class="lnr lnr-book"></i> <span>Reports</span> <span class="fa fa-angle-right" style="float: right"></span></a>
+                <ul id="menu-academico-sub" >
+                    <li id="menu-academico-avaliacoes" ><a href="">Tunnage Reports</a></li>
+                    <li id="menu-academico-boletim" ><a href="">Partywise Reports</a></li>
+                    <li id="menu-academico-boletim" ><a href="">Gradewise Reports</a></li>
+                    <!--<li id="menu-academico-boletim" ><a href="sign.html">Sign up</a></li>
+                    <li id="menu-academico-boletim" ><a href="profile.html">Profile</a></li>-->
+                </ul>
+            </li>
+            <li><a href="settings.html"><i class="fa fa-cog fa-fw" ></i> <span>Settings</span></a></li>
+
+
+
+        </ul>
+    </div>
+</div>
+<div class="clearfix"></div>
+</div>
+<script>
+    var toggle = true;
+
+    $(".sidebar-icon").click(function () {
+        if (toggle) {
+            $(".page-container").addClass("sidebar-collapsed").removeClass("sidebar-collapsed-back");
+            $("#menu span").css({"position": "absolute"});
+        }
+        else {
+            $(".page-container").removeClass("sidebar-collapsed").addClass("sidebar-collapsed-back");
+            setTimeout(function () {
+                $("#menu span").css({"position": "relative"});
+            }, 400);
+        }
+
+        toggle = !toggle;
+    });
+</script>
+<!--js -->
+<script src="js/jquery.nicescroll.js"></script>
+<script src="js/scripts.js"></script>
+<!-- Bootstrap Core JavaScript -->
+<script src="js/bootstrap.min.js"></script>
+<script src="js/bootstrap-datepicker.js"></script>
+<script type="text/javascript">
+    // When the document is ready
+    $(document).ready(function () {
+
+        $('#date1').datepicker({
+            format: "dd/mm/yyyy"
+        });
+        $('#example').DataTable();
+    });
+
+</script>
+<div class = "modal fade" id = "myModal" tabindex = "-1" role = "dialog"
+     aria-labelledby = "myModalLabel" aria-hidden = "true">
+
+    <div class = "modal-dialog">
+        <div class = "modal-content">
+
+            <div class = "modal-header">
+                <button type = "button" class = "close" data-dismiss = "modal" aria-hidden = "true">
+                    &times;
+                </button>
+
+                <h4 class = "modal-title" id = "myModalLabel">
+                    Alert
+                </h4>
+            </div>
+
+            <div class = "modal-body">
+                Are you sure want to delete this?
+            </div>
+
+            <div class = "modal-footer">
+                <button type = "button" class = "btn btn-default" data-dismiss = "modal">
+                    Cancel
+                </button>
+
+                <button type = "button" class = "btn btn-primary">
+                    Delete
+                </button>
+            </div>
+
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+
+</div><!-- /.modal -->
+
+<div ng-controller="FooterController">
+    <div ng-include="footer.url"  ></div>
+</div>
+
+</body>
+</html>

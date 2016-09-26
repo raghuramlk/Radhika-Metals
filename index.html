@@ -1,0 +1,37 @@
+     
+<!DOCTYPE HTML>
+<html >
+<head>
+	<link href="css/bootstrap.min.css" rel='stylesheet' type='text/css' />
+	<link href="css/style.css" rel='stylesheet' type='text/css' />
+
+	<script src="js/jquery-1.10.2.min.js"></script>
+	<script src="js/amcharts.js"></script>
+	<script src="js/serial.js"></script>
+	<script src="js/light.js"></script>
+	<script src="js/radar.js"></script>
+	<link href="css/barChart.css" rel='stylesheet' type='text/css' />
+	<link href="css/fabochart.css" rel='stylesheet' type='text/css' />
+	<script src="js/css3clock.js"></script>
+	<script src="js/skycons.js"></script>
+	<script src="js/jquery.easydropdown.js"></script>
+	<script src="js/dashboard.js"></script>
+	<script src="angular/angular.js"></script>
+
+	<script src="angular/ui-bootstrap-tpls-0.11.0.min.js"></script>
+	<script src="angular/app.js"></script>
+</head>
+<body ng-app="invoiceApp" >
+<div ng-controller="HeaderController">
+	<div ng-include="header.url"  ></div>
+</div>
+<div ng-controller="DashboardController">
+	<div ng-include="dashboard.url"  ></div>
+</div>
+<div ng-controller="SidebarController">
+	<div ng-include="sidebar.url"  ></div>
+</div>
+<div ng-controller="FooterController">
+	<div ng-include="footer.url"  ></div>
+</div>
+
